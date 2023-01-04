@@ -9,9 +9,8 @@ import (
 func Router() *mux.Router {
 	//Creating the mux router
 	router := mux.NewRouter()
-	router.HandleFunc("https://go-web-server-ddeepans-dev.apps.sandbox.x8i5.p1.openshiftapps.com", controller.GetMyAllMovies)
 	//Fetching all the movies from the Database and we do "get" request for this
-	router.HandleFunc("/api/movies", controller.GetMyAllMovies).Methods("GET")
+	router.HandleFunc("/", controller.GetMyAllMovies).Methods("GET")
 	//adding the movie into the Database and we do "post" request for this
 	router.HandleFunc("/api/movie", controller.CreateMovie).Methods("POST")
 	//Updating the Status of weather movie is watched or not and we use "put" request for it
