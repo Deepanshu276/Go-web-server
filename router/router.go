@@ -9,7 +9,6 @@ import (
 func Router() *mux.Router {
 	//Creating the mux router
 	router := mux.NewRouter()
-	router.HandleFunc("/", controller.Home)
 	//Fetching all the movies from the Database and we do "get" request for this
 	router.HandleFunc("/api/movies", controller.GetMyAllMovies).Methods("GET")
 	//adding the movie into the Database and we do "post" request for this
